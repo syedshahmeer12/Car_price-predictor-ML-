@@ -2,15 +2,18 @@
   "version": 2,
   "builds": [
     {
-      "src" : "./index.py",
-      "use" : "@vercel/python",
-      "config" : {"runtime" :  "python3.6"}
+      "src": "./index.py",
+      "use": "@vercel/python",
+      "config": {
+        "maxLambdaSize": "15mb",
+        "memory": 512
+      }
     }
   ],
-  "routes" : [
+  "routes": [
     {
-      "src" : "/(.*)",
-      "dest" : "/"
+      "src": "/(.*)",
+      "dest": "/"
     }
   ]
 }
